@@ -1,5 +1,5 @@
 # alexandrie-2.0
-
+**schema de projet**
 ```mermaid
 classDiagram
     Utilisateurs "1" -- "0..*" Emprunts : "réalise"
@@ -67,3 +67,10 @@ classDiagram
     +List<String> reseauxSociaux
     }
 ```
+**pour quoi on a choisi PostgreSQL**
+
+PostgreSQL garantit une structure de données bien définie, idéale pour gérer des entités relationnelles comme les livres, les emprunts et les utilisateurs.
+
+Il offre une forte cohérence et un respect strict des contraintes, ce qui évite les incohérences dans les données sensibles (ex. : disponibilité des livres).
+
+Ses capacités SQL avancées facilitent les requêtes complexes, souvent nécessaires pour la recherche de livres, les statistiques d’emprunts ou la gestion des réservations.
