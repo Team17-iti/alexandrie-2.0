@@ -1,0 +1,122 @@
+\c alexandrie;
+
+INSERT INTO auteurs (nom_complet, nationalite, date_naissance, date_deces, biographie) VALUES
+-- Science Fiction
+('Isaac Asimov', 'Américaine', '1920-01-02', '1992-04-06', 'Auteur prolifique de science-fiction et de vulgarisation scientifique, connu pour le cycle de Fondation et les lois de la robotique.'),
+('Philip K. Dick', 'Américaine', '1928-12-16', '1982-03-02', 'Auteur de science-fiction explorant la réalité, la paranoïa et la condition humaine (Blade Runner, Minority Report).'),
+('Frank Herbert', 'Américaine', '1920-10-08', '1986-02-11', 'Célèbre pour son roman Dune, œuvre majeure de la science-fiction.'),
+('Arthur C. Clarke', 'Britannique', '1917-12-16', '2008-03-19', 'Auteur de 2001 : L''Odyssée de l''espace et visionnaire technologique.'),
+('H.G. Wells', 'Britannique', '1866-09-21', '1946-08-13', 'Pionnier de la science-fiction avec La Guerre des mondes et La Machine à explorer le temps.'),
+('Ray Bradbury', 'Américaine', '1920-08-22', '2012-06-05', 'Auteur de Fahrenheit 451 et des Chroniques martiennes.'),
+('George Orwell', 'Britannique', '1903-06-25', '1950-01-21', 'Connu pour ses dystopies 1984 et La Ferme des animaux.'),
+('Aldous Huxley', 'Britannique', '1894-07-26', '1963-11-22', 'Auteur du Meilleur des mondes.'),
+('William Gibson', 'Américaine', '1948-03-17', NULL, 'Père du mouvement cyberpunk avec Neuromancien.'),
+('Ursula K. Le Guin', 'Américaine', '1929-10-21', '2018-01-22', 'Auteure de La Main gauche de la nuit, explorant des thèmes anthropologiques et féministes.'),
+
+-- Fantasy
+('J.R.R. Tolkien', 'Britannique', '1892-01-03', '1973-09-02', 'Père de la fantasy moderne, auteur du Seigneur des Anneaux et du Hobbit.'),
+('J.K. Rowling', 'Britannique', '1965-07-31', NULL, 'Créatrice de l''univers de Harry Potter.'),
+('George R.R. Martin', 'Américaine', '1948-09-20', NULL, 'Auteur de la saga Le Trône de fer (Game of Thrones).'),
+('Terry Pratchett', 'Britannique', '1948-04-28', '2015-03-12', 'Auteur de la série humoristique et satirique Les Annales du Disque-monde.'),
+('C.S. Lewis', 'Britannique', '1898-11-29', '1963-11-22', 'Auteur du Monde de Narnia et ami proche de Tolkien.'),
+('Neil Gaiman', 'Britannique', '1960-11-10', NULL, 'Auteur de American Gods, Coraline et Sandman.'),
+('Robin Hobb', 'Américaine', '1952-03-05', NULL, 'Auteure de la saga L''Assassin royal.'),
+('Patrick Rothfuss', 'Américaine', '1973-06-06', NULL, 'Auteur de la Chronique du Tueur de Roi.'),
+('Brandon Sanderson', 'Américaine', '1975-12-19', NULL, 'Auteur prolifique connu pour ses systèmes de magie originaux (Fils-des-brumes).'),
+('Andrzej Sapkowski', 'Polonaise', '1948-06-21', NULL, 'Créateur de la saga Le Sorceleur (The Witcher).'),
+
+-- Policier / Thriller
+('Agatha Christie', 'Britannique', '1890-09-15', '1976-01-12', 'La reine du crime, créatrice d''Hercule Poirot et Miss Marple.'),
+('Arthur Conan Doyle', 'Britannique', '1859-05-22', '1930-07-07', 'Créateur du célèbre détective Sherlock Holmes.'),
+('Georges Simenon', 'Belge', '1903-02-13', '1989-09-04', 'Auteur prolifique, créateur du commissaire Maigret.'),
+('Raymond Chandler', 'Américaine', '1888-07-23', '1959-03-26', 'Maître du roman noir américain, créateur de Philip Marlowe.'),
+('Fred Vargas', 'Française', '1957-06-07', NULL, 'Auteure de polars à succès, créatrice du commissaire Adamsberg.'),
+('Jo Nesbø', 'Norvégienne', '1960-03-29', NULL, 'Auteur de polars nordiques, créateur de l''inspecteur Harry Hole.'),
+('Stieg Larsson', 'Suédoise', '1954-08-15', '2004-11-09', 'Auteur de la trilogie Millénium.'),
+('Harlan Coben', 'Américaine', '1962-01-04', NULL, 'Auteur de thrillers à suspense vendus dans le monde entier.'),
+('Mary Higgins Clark', 'Américaine', '1927-12-24', '2020-01-31', 'Spécialiste du roman à suspense psychologique.'),
+('Maurice Leblanc', 'Française', '1864-11-11', '1941-11-06', 'Créateur du gentleman-cambrioleur Arsène Lupin.'),
+
+-- Horreur / Fantastique
+('Stephen King', 'Américaine', '1947-09-21', NULL, 'Le maître de l''horreur contemporaine (Ça, Shining, Le Fléau).'),
+('H.P. Lovecraft', 'Américaine', '1890-08-20', '1937-03-15', 'Créateur du mythe de Cthulhu et de l''horreur cosmique.'),
+('Edgar Allan Poe', 'Américaine', '1809-01-19', '1849-10-07', 'Poète et auteur de nouvelles fantastiques et macabres.'),
+('Bram Stoker', 'Irlandaise', '1847-11-08', '1912-04-20', 'Auteur du célèbre roman Dracula.'),
+('Mary Shelley', 'Britannique', '1797-08-30', '1851-02-01', 'Auteure de Frankenstein ou le Prométhée moderne.'),
+('Anne Rice', 'Américaine', '1941-10-04', '2021-12-11', 'Auteure des Chroniques des vampires (Entretien avec un vampire).'),
+('Clive Barker', 'Britannique', '1952-10-05', NULL, 'Auteur et réalisateur, créateur de Hellraiser.'),
+('Shirley Jackson', 'Américaine', '1916-12-14', '1965-08-08', 'Auteure de La Maison hantée (The Haunting of Hill House).'),
+('Richard Matheson', 'Américaine', '1926-02-20', '2013-06-23', 'Auteur de Je suis une légende.'),
+('Guy de Maupassant', 'Française', '1850-08-05', '1893-07-06', 'Auteur de nouvelles réalistes et fantastiques (Le Horla).'),
+
+-- Romance
+('Jane Austen', 'Britannique', '1775-12-16', '1817-07-18', 'Auteure de classiques comme Orgueil et Préjugés.'),
+('Charlotte Brontë', 'Britannique', '1816-04-21', '1855-03-31', 'Auteure de Jane Eyre.'),
+('Emily Brontë', 'Britannique', '1818-07-30', '1848-12-19', 'Auteure des Hauts de Hurlevent.'),
+('Nora Roberts', 'Américaine', '1950-10-10', NULL, 'Auteure prolifique de romans d''amour et de suspense.'),
+('Danielle Steel', 'Américaine', '1947-08-14', NULL, 'L''une des auteures les plus lues au monde dans le genre romanesque.'),
+('Marc Levy', 'Française', '1961-10-16', NULL, 'Auteur français contemporain à succès (Et si c''était vrai...).'),
+('Guillaume Musso', 'Française', '1974-06-06', NULL, 'Auteur français de best-sellers mêlant romance et suspense.'),
+('Nicholas Sparks', 'Américaine', '1965-12-31', NULL, 'Auteur de romans sentimentaux (N''oublie jamais).'),
+('Margaret Mitchell', 'Américaine', '1900-11-08', '1949-08-16', 'Auteure d''Autant en emporte le vent.'),
+('George Sand', 'Française', '1804-07-01', '1876-06-08', 'Romancière et épistolière engagée du XIXe siècle.'),
+
+-- Littérature Classique
+('Victor Hugo', 'Française', '1802-02-26', '1885-05-22', 'Monstre sacré de la littérature française (Les Misérables, Notre-Dame de Paris).'),
+('Émile Zola', 'Française', '1840-04-02', '1902-09-29', 'Chef de file du naturalisme, auteur des Rougon-Macquart.'),
+('Gustave Flaubert', 'Française', '1821-12-12', '1880-05-08', 'Auteur de Madame Bovary et L''Éducation sentimentale.'),
+('Charles Dickens', 'Britannique', '1812-02-07', '1870-06-09', 'Grand romancier de l''époque victorienne (Oliver Twist, David Copperfield).'),
+('Léon Tolstoï', 'Russe', '1828-09-09', '1910-11-20', 'Auteur de Guerre et Paix et Anna Karénine.'),
+('Fiodor Dostoïevski', 'Russe', '1821-11-11', '1881-02-09', 'Auteur de Crime et Châtiment et Les Frères Karamazov.'),
+('Marcel Proust', 'Française', '1871-07-10', '1922-11-18', 'Auteur de À la recherche du temps perdu.'),
+('Honoré de Balzac', 'Française', '1799-05-20', '1850-08-18', 'Auteur de La Comédie humaine.'),
+('Ernest Hemingway', 'Américaine', '1899-07-21', '1961-07-02', 'Prix Nobel, auteur du Vieil Homme et la Mer.'),
+('William Faulkner', 'Américaine', '1897-09-25', '1962-07-06', 'Auteur majeur du sud des États-Unis (Le Bruit et la Fureur).'),
+
+-- Fiction Moderne / Contemporaine
+('Haruki Murakami', 'Japonaise', '1949-01-12', NULL, 'Auteur de 1Q84 et Kafka sur le rivage, mêlant réalisme et onirisme.'),
+('Gabriel García Márquez', 'Colombienne', '1927-03-06', '2014-04-17', 'Prix Nobel, maître du réalisme magique (Cent ans de solitude).'),
+('Milan Kundera', 'Tchèque', '1929-04-01', '2023-07-11', 'Auteur de L''Insoutenable Légèreté de l''être.'),
+('Paul Auster', 'Américaine', '1947-02-03', NULL, 'Auteur de la Trilogie new-yorkaise.'),
+('Philip Roth', 'Américaine', '1933-03-19', '2018-05-22', 'Géant de la littérature américaine (Pastorale américaine).'),
+('Toni Morrison', 'Américaine', '1931-02-18', '2019-08-05', 'Prix Nobel, auteure de Beloved.'),
+('J.M.G. Le Clézio', 'Française', '1940-04-13', NULL, 'Prix Nobel de littérature 2008.'),
+('Patrick Modiano', 'Française', '1945-07-30', NULL, 'Prix Nobel de littérature 2014, explorateur de la mémoire.'),
+('Michel Houellebecq', 'Française', '1956-02-26', NULL, 'Auteur contemporain controversé et traduit dans le monde entier.'),
+('Amélie Nothomb', 'Belge', '1966-07-09', NULL, 'Auteure prolifique à succès (Stupeur et Tremblements).'),
+
+-- Philosophie
+('Platon', 'Grecque', NULL, NULL, 'Philosophe antique, disciple de Socrate, fondateur de l''Académie.'),
+('Aristote', 'Grecque', NULL, NULL, 'Philosophe antique, disciple de Platon, précepteur d''Alexandre le Grand.'),
+('René Descartes', 'Française', '1596-03-31', '1650-02-11', 'Philosophe et mathématicien, auteur du Discours de la méthode.'),
+('Emmanuel Kant', 'Allemande', '1724-04-22', '1804-02-12', 'Philosophe des Lumières, auteur de la Critique de la raison pure.'),
+('Friedrich Nietzsche', 'Allemande', '1844-10-15', '1900-08-25', 'Philosophe critique de la morale et de la religion (Ainsi parlait Zarathoustra).'),
+('Jean-Paul Sartre', 'Française', '1905-06-21', '1980-04-15', 'Philosophe existentialiste et écrivain engagé.'),
+('Simone de Beauvoir', 'Française', '1908-01-09', '1986-04-14', 'Philosophe et romancière féministe (Le Deuxième Sexe).'),
+('Michel Foucault', 'Française', '1926-10-15', '1984-06-25', 'Philosophe travaillant sur les relations entre pouvoir et savoir.'),
+('Hannah Arendt', 'Allemande', '1906-10-14', '1975-12-04', 'Philosophe politique, auteure de Les Origines du totalitarisme.'),
+('Albert Camus', 'Française', '1913-11-07', '1960-01-04', 'Écrivain et philosophe de l''absurde (L''Étranger, Le Mythe de Sisyphe).'),
+
+-- Poésie
+('Charles Baudelaire', 'Française', '1821-04-09', '1867-08-31', 'Poète maudit, auteur des Fleurs du mal.'),
+('Arthur Rimbaud', 'Française', '1854-10-20', '1891-11-10', 'Poète génial et précoce (Une saison en enfer).'),
+('Paul Verlaine', 'Française', '1844-03-30', '1896-01-08', 'Poète symboliste, compagnon de Rimbaud.'),
+('Victor Hugo (Poète)', 'Française', '1802-02-26', '1885-05-22', 'Aussi immense poète que romancier (Les Contemplations).'),
+('Guillaume Apollinaire', 'Française', '1880-08-26', '1918-11-09', 'Poète précurseur du surréalisme (Alcools).'),
+('Emily Dickinson', 'Américaine', '1830-12-10', '1886-05-15', 'Poétesse majeure de la littérature américaine.'),
+('Walt Whitman', 'Américaine', '1819-05-31', '1892-03-26', 'Poète humaniste, auteur de Feuilles d''herbe.'),
+('Pablo Neruda', 'Chilienne', '1904-07-12', '1973-09-23', 'Prix Nobel, poète engagé et lyrique.'),
+('Rainer Maria Rilke', 'Autrichienne', '1875-12-04', '1926-12-29', 'Poète de langue allemande d''une grande sensibilité.'),
+('Jacques Prévert', 'Française', '1900-02-04', '1977-04-11', 'Poète populaire et scénariste (Paroles).'),
+
+-- Théâtre
+('William Shakespeare', 'Britannique', '1564-04-23', '1616-04-23', 'Le plus grand dramaturge de langue anglaise (Hamlet, Roméo et Juliette).'),
+('Molière', 'Française', '1622-01-15', '1673-02-17', 'Le patron de la Comédie-Française (Le Malade imaginaire, L''Avare).'),
+('Jean Racine', 'Française', '1639-12-22', '1699-04-21', 'Maître de la tragédie classique (Phèdre).'),
+('Pierre Corneille', 'Française', '1606-06-06', '1684-10-01', 'Auteur du Cid et d''Horace.'),
+('Samuel Beckett', 'Irlandaise', '1906-04-13', '1989-12-22', 'Auteur de théâtre de l''absurde (En attendant Godot).'),
+('Eugène Ionesco', 'Roumaine', '1909-11-26', '1994-03-28', 'Auteur de La Cantatrice chauve et Rhinocéros.'),
+('Anton Tchekhov', 'Russe', '1860-01-29', '1904-07-15', 'Dramaturge et nouvelliste (La Mouette, La Cerisaie).'),
+('Tennessee Williams', 'Américaine', '1911-03-26', '1983-02-25', 'Auteur d''Un tramway nommé Désir.'),
+('Bertolt Brecht', 'Allemande', '1898-02-10', '1956-08-14', 'Dramaturge et metteur en scène (L''Opéra de quat''sous).'),
+('Edmond Rostand', 'Française', '1868-04-01', '1918-12-02', 'Auteur de Cyrano de Bergerac.');

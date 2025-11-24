@@ -1,0 +1,128 @@
+services:
+  # Base de données PostgreSQL
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres_sgbd
+    environment:
+      POSTGRES_DB: sgbd_cours
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --lc-collate=fr_FR.UTF-8 --lc-ctype=fr_FR.UTF-8"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker-configuration/postgres:/docker-entrypoint-initdb.d
+    networks:
+      - sgbd_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Interface de visualisation Metabase
+  metabase:
+    image: metabase/metabase:latest
+    container_name: metabase_sgbd
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: metabase
+      MB_DB_PORT: 5432
+      MB_DB_USER: postgres
+      MB_DB_PASS: postgres123
+      MB_DB_HOST: postgres
+    ports:
+      - "3000:3000"
+    volumes:
+      - metabase_data:/metabase-data
+    networks:
+      - sgbd_network
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Interface d'administration pgAdmin (optionnel)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin_sgbd
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_SERVER_JSON_FILE: /pgadmin-config/servers.json
+      PGPASS_FILE: /pgadmin-config/pgpass
+    ports:
+      - "8080:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+      - ./docker-configuration/pgadmin:/pgadmin-config:ro
+    networks:
+      - sgbd_network
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Base de données MongoDB
+  mongodb:
+    image: mongo:7.0
+    container_name: mongodb_sgbd
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+      MONGO_INITDB_DATABASE: boutique_electronique
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - mongodb_config:/data/configdb
+    networks:
+      - sgbd_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Interface d'administration Mongo Express
+  mongo-express:
+    image: mongo-express:latest
+    container_name: mongo_express_sgbd
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: admin123
+      ME_CONFIG_MONGODB_URL: mongodb://admin:admin123@mongodb:27017/
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: admin
+    ports:
+      - "8081:8081"
+    networks:
+      - sgbd_network
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local
+  metabase_data:
+    driver: local
+  pgadmin_data:
+    driver: local
+  mongodb_data:
+    driver: local
+  mongodb_config:
+    driver: local
+
+networks:
+  sgbd_network:
+    driver: bridge
